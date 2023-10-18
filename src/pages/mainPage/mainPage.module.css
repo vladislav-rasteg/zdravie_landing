@@ -1,0 +1,66 @@
+.pageWrapper{
+    width: 1280px;
+    padding-top: 111px;
+}
+
+a{
+    cursor: pointer;
+}
+
+.rowFlex{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.columnFlex{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.heroMainBlock{
+    display: flex;
+    flex-direction: column;
+    height: 274px;
+    padding: 34px;
+    background: #F8F8F8;
+    border-radius: 22px;
+    justify-content: space-between;
+}
+
+.heroRecordBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px;
+    border-radius: 22px;
+    background: #AAB1FF;
+}
+
+.whiteButton{
+    display: flex;
+    padding: 32px;
+    background: #FFFFFF;
+    border-radius: 52px;
+    transition: 300ms;
+}
+
+.whiteButton:hover{
+    transform: scale(1.05);
+}
+
+.firstHeroImage{
+    width: 314px;
+    border-radius: 22px;
+}
+
+.secondHeroImage{
+    width: 314px;
+    border-radius: 146px;
+}
+
+.thirdHeroImage{
+    width: 636px;
+    border-radius: 22px;
+}

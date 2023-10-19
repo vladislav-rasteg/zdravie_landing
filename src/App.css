@@ -1,7 +1,25 @@
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url(./assets/font/SuisseIntl.otf);
+}
+
 *{
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+#root{
+  font-family: 'Suisse Intl', 'Roboto';
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
 .appWrapper{
   width: 100vw;
   display: flex;

@@ -1,0 +1,68 @@
+.navbarWrapper{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+.navbar{
+    display: flex;
+    width: 1280px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.navbarLinks{
+    display: flex;
+    gap: 32px;
+}
+
+.navbarLinks a{
+    color: #202020;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0px;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.navbarLinks a:hover{
+    transform: scale(1.05);
+}
+
+.navButtons{
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.navButtons a{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.navButtons a:hover{
+    transform: scale(1.05);
+}
+
+.navbarButton{
+    font-family: 'Suisse Intl';
+    border: none;
+    display: flex;
+    font-weight: 400;
+    padding: 16px 22px;
+    border-radius: 26px;
+    background-color: #3A83F7;
+    color: #FFFFFF;
+}

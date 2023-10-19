@@ -2,11 +2,13 @@ import {useRef, useState, useEffect} from "react"
 import firstHeroImage from '../../assets/firstHeroImage.png'
 import secondHeroImage from '../../assets/secondHeroImage.png'
 import thirdHeroImage from '../../assets/thirdHeroImage.png'
+import Navbar from "../../components/Navbar/navbar"
 import s from "./mainPage.module.css"
 
 const mainPage = () => {
     return(
         <div className={s.pageWrapper}>
+            <Navbar />
             <div className={s.rowFlex}>
                 <div className={s.columnFlex}>
                     <div className={s.heroMainBlock}>
@@ -25,6 +27,14 @@ const mainPage = () => {
                 <div>
                 <img className={s.thirdHeroImage} src={thirdHeroImage} />
                 </div>
+            </div>
+
+            <div className={s.aboutBlock}>
+                <p className={s.aboutText}>Мы специализируемся на превентивной медицине
+                                            <br/>и массаже. Наши врачи применяют целостный подход
+                                            <br/>к лечению, устраняя  не только симптомы,
+                                            <br/>но и основные причины болезни</p>
+                <a className={s.aboutButton}>Записаться на прием</a>
             </div>
         </div>
     )

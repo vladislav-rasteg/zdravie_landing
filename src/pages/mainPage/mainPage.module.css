@@ -110,6 +110,8 @@ h2{
     font-style: normal;
     font-weight: 400;
     line-height: 132%; /* 60.72px */
+    padding: 0;
+    margin: 0;
 }
 
 .aboutButton{
@@ -123,3 +125,193 @@ h2{
     background: #202020;
     color: #FFFFFF;
 }
+
+.servicesBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 120px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.servicesGrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.servicesGrid div{
+    aspect-ratio: 1;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px;
+    transition: 300ms;
+    background-position: center;
+    background-size: 100%;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+.servicesGrid div:hover{
+    background-size: 120%;
+}
+
+.servicesGrid div h3{
+    color: #202020;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+.servicesGrid div a{
+    padding: 22px 32px;
+    border-radius: 52px;
+    background: #FFFFFF;
+    width: fit-content;
+    transition: 300ms;
+}
+
+.servicesGrid div a:hover{
+    transform: scale(1.05);
+}
+
+.servicesGrid div.buttonRow{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    aspect-ratio: 0;
+    padding: 0px;
+}
+
+.service1{
+    background: #B1D5F7;
+    background-image: url("../../assets/1.png");
+    background-size: cover;
+}
+
+.service2{
+    
+}
+
+.service3{
+    background: #79BAB7;
+    background-image: url("../../assets/3.png");
+    background-size: cover;
+}
+
+.service4{
+    background: #AAB1FF;
+    background-image: url("../../assets/4.png");
+    background-size: cover;
+}
+
+.service5{
+    padding: 0 !important;
+    padding-top: 34px !important;
+}
+
+.service5 p{
+    padding: 0;
+    margin: 0;
+    color: #202020;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.service6{
+    background: #75BBA6;
+    background-image: url("../../assets/6.png");
+    background-size: cover;
+}
+
+.service7{
+    border-radius: 50% !important;
+    border: 1px solid #2F2F2F;
+    align-items: center;
+    justify-content: center !important;
+    gap: 22px;
+}
+
+.service7 a{
+    border: 1px solid #202020;
+}
+
+.service8{
+    background: #CBEB96;
+    background-image: url("../../assets/8.png");
+    background-size: cover;
+}
+
+.service9{
+    background: #F7B458;
+    background-image: url("../../assets/9.png");
+    background-size: cover;
+    
+}
+
+.service9 h3{
+    min-width: 260px;
+}
+
+.service10{
+    
+}
+
+.service11{
+    background: #EFA8A9;
+    background-image: url("../../assets/11.png");
+    background-size: cover;
+}
+
+.service12{
+    background: #B9D7F7;
+    background-image: url("../../assets/12.png");
+    background-size: cover;
+}
+
+.ourDoctors{
+    display: flex;
+    gap: 8px;
+    height: 700px;
+}
+
+.aboutDoctor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px;
+    background: #F8F8F8;
+    border-radius: 22px;
+    height: 100%;
+    width: 100%;
+}
+
+.ourDoctorsText{
+    
+}
+
+.nextButton{
+
+
+}
+
+.doctorImageWrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.doctorImage{
+    width: 100%;
+    border-radius: 22px;
+}
+

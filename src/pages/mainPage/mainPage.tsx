@@ -121,12 +121,20 @@ const mainPage = () => {
                         специалистами и применяются для<br />
                         устранения причины болезни или профилактики.</p>
                         <div className={s.nextButton}>
-                            <ChevronRight />
+                            <ChevronRight  />
                         </div>
                     </div>
                 </div>
                 <div className={s.doctorImageWrapper}>
                     <img className={s.doctorImage} src={TRimage} />
+                    <div className={s.switcher}>
+                        <div className={s.switcherButton}>
+                            <ChevronLeftSmall />
+                        </div>
+                        <div className={s.switcherButton}>
+                            <ChevronRightSmall />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,11 @@
   src: url(./assets/font/SuisseIntl.otf);
 }
 
+@font-face {
+  font-family: 'Suisse Intl Medium';
+  src: url(./assets/font/SuisseIntlMedium.otf);
+}
+
 *{
   box-sizing: border-box;
   scroll-behavior: smooth;

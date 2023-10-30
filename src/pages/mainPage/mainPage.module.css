@@ -328,7 +328,9 @@ h2{
 .doctorImageWrapper{
     min-width: 636px;
     height: 100%;
+    border-radius: 22px;
     position: relative;
+    overflow: hidden;
 }
 
 .doctorImage{
@@ -377,4 +379,188 @@ h2{
 .switcherButton:hover{
     background: #202020;
     transform: scale(1.1);
+}
+
+.doctorSwitched{
+    animation-duration: 800ms;
+    animation-name: showDoctor;
+}
+
+@keyframes showDoctor {
+    from {
+        transform: scale(1.1);
+    }
+  
+    to {
+        transform: scale(1);
+    }
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.firstMessage{
+    display: flex;
+    padding: 22px 36px;
+    background: #FFFFFF;
+    width: fit-content;
+    border-radius: 32px;
+    position: relative;
+}
+
+.firstMessageCorner{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.doctorMessageWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.doctorMessage{
+    display: flex;
+    flex-direction: column;
+    padding: 22px 36px;
+    background: #CBEB96;
+    width: fit-content;
+    border-radius: 32px;
+    position: relative;
+}
+
+.doctorName{
+    color: #202020;
+    font-size: 18px;
+    font-family: 'Suisse Intl Medium';
+    font-style: normal;
+    line-height: 132%;
+    padding: 0;
+    margin: 0;
+}
+
+.doctorMessageText{
+    color: #202020;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.secondMessageCorner{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.programsSection{
+    display: flex;
+    height: 200vh;
+    position: relative;
+    margin-top: 60px;
+}
+
+.programsBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.programsHeading{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    white-space: pre;
+}
+
+.programTypeActive{
+    cursor: pointer;
+    border-bottom: 3px solid #000000;
+}
+
+.programTypeDisabled{
+    cursor: pointer;
+    opacity: 0.4;
+    transition: 300ms;
+}
+
+.programsContentImage{
+    width: 400px;
+    height: 400px;
+}
+
+.aboutProgram{
+    display: flex;
+    color: #202020;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132%;
+    padding: 34px;
+    height: 246px;
+    border-radius: 22px;
+    background: #CBEB96;
+}
+
+.programsContentWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.programsContent{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.clickToSwitch{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.programsList{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 670px;
+    max-width: 670px;
+}
+
+.programsPair{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+}
+
+.program{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 32px 0px;
+    border-radius: 43px;
+    background: #F8F8F8;
+    border: 2px solid #F8F8F8;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.activeProgram{
+    border: 2px solid #A7C970;
+    background: #CBEB96;
 }

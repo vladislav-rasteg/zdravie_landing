@@ -1,4 +1,5 @@
 import {useRef, useState, useEffect} from "react"
+import {motion, useScroll, useTransform, useSpring} from "framer-motion"
 import firstHeroImage from '../../assets/firstHeroImage.png'
 import secondHeroImage from '../../assets/secondHeroImage.png'
 import thirdHeroImage from '../../assets/thirdHeroImage.png'
@@ -26,6 +27,24 @@ const MainPage = () => {
     const [programType, setProgramType] = useState(1)
 
     const [selectedProgram, setSelectedProgram] = useState(1)
+
+    const ref = useRef<HTMLDivElement>(null)
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["0 1", "1 1"]
+    })
+    scrollYProgress.onChange(() => {
+        if(scrollYProgress.getPrevious() >= 0.75){
+            if(programType !== 2){
+                setProgramType(2)
+            }
+        } else {
+            if(programType !== 1){
+                setProgramType(1)
+            }
+        }
+    })
+    
 
     const switchDoctor = () => {
         setDoctorsSwitcherClassName(`${s.doctorImage} ${s.doctorSwitched}`)
@@ -192,11 +211,12 @@ const MainPage = () => {
                                     <div className={s.doctorMessage}>
                                         <p className={s.doctorName}>Алексей Растегаев</p>
                                         <p className={s.doctorMessageText}>
-                                        Мануальный терапевт, специалист<br/>
-                                        по электронной биофункциональной<br/>
-                                        органометрии, биорезонансной терапии<br/>
-                                        и гомеосиниатрии. Специалист превентивной<br/>
-                                        и интегративной медецины.</p>
+                                        Мануальный терапевт, остеопат.<br/>
+                                        Специалист по лечению вертебральной патологии<br/>
+                                        у взрослых и детей. Лечение головных и суставных<br/>
+                                        болей, авторские методики. Врач превентивной,<br/>
+                                        интегративной и антивозрастной медицины.<br/>
+                                        Студент PreventAge Basic.</p>
                                         <SecondMessage className={s.secondMessageCorner}/>
                                     </div>
                                 :
@@ -231,7 +251,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
-            <div className={s.programsSection}>
+            <div className={s.programsSection} ref={ref}>
                 <div className={s.programsBlock}>
                     <div className={s.programsHeading}>
                         <h1>Программы для </h1>
@@ -270,10 +290,14 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={s.aboutProgram}>
-                    Здоровейка - комплексная программа для детей 
-                    с нарушениями осанки, сколиозом, частыми 
-                    головокружениями, болями, сниженным зрением.
+                    <div className={s.aboutProgram} style={programType === 1 ? {background: '#CBEB96'} : {background: '#B9D8F7'}}>
+                        <p>Здоровейка - комплексная программа для детей 
+                        с нарушениями осанки, сколиозом, частыми 
+                        головокружениями, болями, сниженным зрением.</p>
+                        <div className={s.aboutProgramButtons}>
+                            <a className={s.button}>Записаться онлайн</a>
+                            <a className={s.button} href="tel:+73422581285">+7 (342) 258-12-85</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,10 @@ import { ReactComponent as FirstMessage } from "../../assets/firstMessage.svg"
 import { ReactComponent as SecondMessage } from "../../assets/secondMessage.svg"
 import { ReactComponent as SwitchRight } from "../../assets/switchRight.svg"
 import { ReactComponent as SwitchLeft } from "../../assets/switchLeft.svg"
-
+import review1 from "../../assets/review1.png";
+import review2 from "../../assets/review2.png";
+import review3 from "../../assets/review3.png";
+import review4 from "../../assets/review4.png";
 const MainPage = () => {
 
     const [doctorIndex, setDoctorIndex] = useState(1)
@@ -25,6 +28,7 @@ const MainPage = () => {
     const [doctorsSwitcherClassName, setDoctorsSwitcherClassName] = useState(`${s.doctorImage}`)
 
     const [programType, setProgramType] = useState(1)
+    const [programTypeSwitched, setProgramTypeSwitched] = useState(false)
 
     const [selectedProgram, setSelectedProgram] = useState(1)
 
@@ -33,15 +37,15 @@ const MainPage = () => {
         target: ref,
         offset: ["0 1", "1 1"]
     })
-    scrollYProgress.onChange(() => {
-        if(scrollYProgress.getPrevious() >= 0.75){
-            if(programType !== 2){
-                setProgramType(2)
-            }
-        } else {
-            if(programType !== 1){
-                setProgramType(1)
-            }
+
+    let programmType: number = 1;
+
+    scrollYProgress.on("change", () => {
+        if(!programTypeSwitched && scrollYProgress.getPrevious() > 0.75){
+            console.log('program tyoe switched')
+            setProgramTypeSwitched(true)
+            setProgramType(2)
+            setSelectedProgram(6)
         }
     })
     
@@ -74,8 +78,10 @@ const MainPage = () => {
     const switchProgramType = () => {
         if(programType === 1){
             setProgramType(2)
+            setSelectedProgram(6)
         } else {
             setProgramType(1)
+            setSelectedProgram(1)   
         }
     }
 
@@ -98,7 +104,7 @@ const MainPage = () => {
                     </div>
                     <div className={s.heroRecordBlock}>
                         <h2>Записаться<br/>к специалисту</h2>
-                        <a className={s.whiteButton}>Онлайн запись</a>
+                        <a href="#" className={s.whiteButton} data-url="https://w632142.yclients.com/">Онлайн запись</a>
                     </div>
                 </div>
                 <div>
@@ -268,35 +274,163 @@ const MainPage = () => {
                             программу</p>
                             <SwitchLeft />
                         </div>
-                        <div className={s.programsList}>
-                            <div className={s.programsPair}>
-                                <div className={selectedProgram === 1 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(1)}}>
-                                    Здоровейка
+                        {programType === 1 ? 
+                            <div className={s.programsList}>
+                                <div className={s.programsPair}>
+                                    <div className={selectedProgram === 1 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(1)}}>
+                                        Здоровейка
+                                    </div>
+                                    <div className={selectedProgram === 2 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(2)}}>
+                                        Говорун
+                                    </div>
                                 </div>
-                                <div className={selectedProgram === 2 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(2)}}>
-                                    Говорун
+                                <div className={s.programsPair}>
+                                    <div className={selectedProgram === 3 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(3)}}>
+                                        Отличник
+                                    </div>
+                                    <div className={selectedProgram === 4 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(4)}}>
+                                        Малышок
+                                    </div>
+                                </div>
+                                <div className={selectedProgram === 5 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(5)}}>
+                                    Здоровый позвоночник
+                                </div>
+                            </div>
+                            :
+                            <div className={s.programsList}>
+                            <div className={s.programsPair}>
+                                <div className={selectedProgram === 6 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(6)}}>
+                                    Преодоление своего страха
+                                </div>
+                                <div className={selectedProgram === 7 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(7)}}>
+                                    Победа над депрессиями
                                 </div>
                             </div>
                             <div className={s.programsPair}>
-                                <div className={selectedProgram === 3 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(3)}}>
-                                    Отличник
+                                <div className={selectedProgram === 8 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(8)}}>
+                                    Сексуальная регуляция
                                 </div>
-                                <div className={selectedProgram === 4 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(4)}}>
-                                    Малышок
+                                <div className={selectedProgram === 9 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(9)}}>
+                                    Программа обучения
                                 </div>
                             </div>
-                            <div className={selectedProgram === 5 ? `${s.program} ${s.activeProgram}` : s.program} onClick={() => {setSelectedProgramHandler(5)}}>
-                                Здоровый позвоночник
+                            <div className={s.programsPair}>
+                                <div className={selectedProgram === 10 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(10)}}>
+                                    Выход из стресса
+                                </div>
+                                <div className={selectedProgram === 11 ? `${s.program2} ${s.activeProgram2}` : s.program2} onClick={() => {setSelectedProgramHandler(11)}}>
+                                    Денежный поток
+                                </div>
                             </div>
                         </div>
+
+                        }
+                        
                     </div>
                     <div className={s.aboutProgram} style={programType === 1 ? {background: '#CBEB96'} : {background: '#B9D8F7'}}>
-                        <p>Здоровейка - комплексная программа для детей 
-                        с нарушениями осанки, сколиозом, частыми 
-                        головокружениями, болями, сниженным зрением.</p>
+                        {
+                            selectedProgram === 1 ?
+                                <p>Здоровейка - программа для часто и длительно болеющих детей. Мы помогаем родителям понять причину болезней и показываем пути их решения.</p>
+                            :
+                            selectedProgram === 2 ?
+                                <p>Говорун - программа для детей, имеющих задержку речевого развития. Это авторская, эффективная методика Татьяны Сиротиной.</p>
+                            :
+                            selectedProgram === 3 ?
+                                <p>Отличник - комплексная программа для детей школьного возраста. Прогрмма помогает снять тревогу ребенка перед школой, справиться с рассеянностью, а также способствует улучшению памяти.</p>
+                            :
+                            selectedProgram === 4 ?
+                                <p>Малышок - уникальная программа. Специалисты Здравия более 25 лет собирали опыт в лечении и поддержании здоровья новорожденных детей, здоровых детей, и деток, имеющих те или иные отклонения.</p>
+                            :
+                            selectedProgram === 5 ?
+                                <p>Здоровый позвоночник - комплексная программа для детей 
+                                с нарушениями осанки, сколиозом, частыми 
+                                головокружениями, болями, сниженным зрением.</p>
+                            :
+                            selectedProgram === 6 ?
+                                <p>Мы поможем вам преодолеть сови страхи! Вы справитесь с боязнью публичных выступлений, перелетов, отношений, темноты или насекомых. Границы вашей реальности раздвинутся!</p>
+                            :
+                            selectedProgram === 7 ?
+                                <p>Начните радоваться жизни! Позвольте себе это! Программа устраняет любые виды депрессий, беспокойства, неврозы, чувство вины, панические атаки, ПМС, климакс и многое другое.</p>
+                            :
+                            selectedProgram === 8 ?
+                                <p>Эффективная программа проблем сексуальной сферы мужчин и женщин. Решим проблему ослабленной потенции или низкого либидо. Сделайте вашу жизнь ярче!</p>
+                            :
+                            selectedProgram === 9 ?
+                                <p>Обучайтесь без труда! Поможем снять стресс, улучшить обучаемость, память и повысить концентрацию. Вы подниметесь на новые высоту в учебе и работе!</p>
+                            :
+                            selectedProgram === 10 ?
+                                <p>Вернитесь к здоровой и счастливой жизни! Программа высвободит вас из круга стресс - болезнь - стресс. </p>
+                            :
+                                <p>Программа направлена на стабилизацию финансовой части жизни. Снятие психологических ограничений и страхов. </p>
+
+                        }
                         <div className={s.aboutProgramButtons}>
                             <a className={s.button}>Записаться онлайн</a>
                             <a className={s.button} href="tel:+73422581285">+7 (342) 258-12-85</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={s.reviews}>
+                <div className={s.reviews_left}>
+                    <h1>Отзывы</h1>
+                    <div className={s.subblock}>
+                        <p>
+                        Вы всегда можете оставить<br/>
+                        честный отзыв о нашей работе
+                        </p>
+                        <a href="https://yandex.ru/maps/-/CDecMUm-" target="_blank" className={s.reviewButton}>Оставить отзыв</a>
+                    </div>
+                </div>
+                <div className={s.reviews_right}>
+                    <div className={s.review}>
+                        <img src={review1} />
+                        <div className={s.reviewText}>
+                            <p className={s.reviewTextName}>​Ксения Пугач</p>
+                            <p className={s.reviewTextText}>
+                            Лучшие врачи, думающие, не назначают с ходу
+                            антибиотики, разбираются в проблеме!
+                            Достойная терапия, натуропатия! Рекомендую
+                            для тех родителей, кто думает о своих детках и об
+                            их здоровье, а так же о своем!
+                            </p>
+                        </div>
+                    </div>
+                    <div className={s.review}>
+                        <img src={review2} />
+                        <div className={s.reviewText}>
+                            <p className={s.reviewTextName}>Алёна Кустова</p>
+                            <p className={s.reviewTextText}>
+                            Ходим в Здравие с 2 детьми уже более 5 лет.
+                            Лечат и взрослых, и детей. Работают не на
+                            отвяжись, а тщательно разбираясь в проблеме,
+                            ее лечении и сохранении здоровья не в моменте,
+                            а на всю жизнь.
+                            </p>
+                        </div>
+                    </div>
+                    <div className={s.review}>
+                        <img src={review3} />
+                        <div className={s.reviewText}>
+                            <p className={s.reviewTextName}>Елена К.</p>
+                            <p className={s.reviewTextText}>
+                                Ходим почти всей семьёй, отличные специалисты
+                                своего дела, отношение внимательное. Особенно
+                                рекомендую для семей с детьми, решаются
+                                многие проблемы со здоровьем у деток.
+                            </p>
+                        </div>
+                    </div>
+                    <div className={s.review}>
+                        <img src={review4} />
+                        <div className={s.reviewText}>
+                            <p className={s.reviewTextName}>Александра Дубчинская</p>
+                            <p className={s.reviewTextText}>
+                                Очень хороший медицинский центр, для тех, кто
+                                устал от лекарств, замучался сидеть на
+                                больничном с ребенком, грамотная работа
+                                докторов с детьми и взрослыми!
+                            </p>
                         </div>
                     </div>
                 </div>

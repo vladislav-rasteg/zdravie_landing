@@ -157,7 +157,7 @@ h2{
 }
 
 .servicesGrid div:hover{
-    background-size: 120%;
+    background-size: 110%;
 }
 
 .servicesGrid div h3{
@@ -592,4 +592,113 @@ h2{
     border-radius: 42px;
     border: 1px solid #000;
     text-decoration: none;
+}
+
+.program2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 32px 0px;
+    border-radius: 43px;
+    background: #F8F8F8;
+    border: 2px solid #F8F8F8;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.activeProgram2{
+    border: 2px solid #9BBAD9;
+    background: #B9D8F7;
+}
+
+.reviews{
+    margin-top: 60px;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    height: 700px;
+}
+
+.reviews_left{
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    padding: 34px;
+    background: #B9D8F7;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    background-image: url(../../assets/reviews.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.reviews_right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reviewButton{
+    display: flex;
+    padding: 22px 32px;
+    border: 1px solid #202020;
+    border-radius:  32px;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    color: #202020;
+}
+
+.reviewButton:hover{
+    color: #FFFFFF;
+    background: #202020;
+}
+
+.subblock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.review{
+    background: #F8F8F8;
+    border-radius: 22px;
+    display: flex;
+    padding: 0px 34px;
+    gap: 22px;
+    align-items: center;
+    height: 100%;
+}
+
+.reviewText{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reviewTextName{
+    padding: 0;
+    margin: 0;
+    color: #202020;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.reviewTextText{
+    padding: 0;
+    margin: 0;
+    color: #202020;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

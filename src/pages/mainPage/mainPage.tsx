@@ -435,6 +435,10 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
+            <div className={s.servicesBlock}>
+                <h1>Где мы находимся</h1>
+                <iframe className={s.map} src="https://yandex.ru/map-widget/v1/?um=constructor%3A0bca8db149da5c9d1453403d44b0b4faedf3e97da7f12712f0f4c8342ca41121&amp;source=constructor" width="100%" height="500"></iframe>
+            </div>
         </div>
         
     )

@@ -702,3 +702,8 @@ h2{
     font-weight: 400;
     line-height: normal;
 }
+
+.map{
+    border-radius: 22px;
+    border: 2px solid #ffffff;
+}

@@ -231,13 +231,15 @@ const MainPage = () => {
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
-                        <div className={s.service3}>
+                        <div className={s.service}>
+                            <div className={s.service3}></div>
                             <h3>Массаж женский</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
-                        <div className={s.service4}>
+                        <div className={s.service}>
+                            <div className={s.service4}></div>
                             <h3>Массаж мужской</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
@@ -250,7 +252,8 @@ const MainPage = () => {
                             поддержания и восстановления
                             здоровья для детей и взрослых</p>
                         </div>
-                        <div className={s.service6}>
+                        <div className={s.service}>
+                            <div className={s.service6}></div>
                             <h3>Прием педиатра</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
@@ -260,33 +263,37 @@ const MainPage = () => {
                             <h3>Наши курсы</h3>
                             <a className={s.button}>Смотреть</a>
                         </div>
-                        <div className={s.service8}>
+                        <div className={s.service}>
+                            <div className={s.service8}></div>
                             <h3>Биорезонансная <br/>терапия</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
-                        <div className={s.service9}>
+                        <div className={s.service}>
+                            <div className={s.service9}></div>
                             <h3>Кабинет здорового<br/>питания для детей<br/>и взрослых</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
-                        <div className={s.service10}>
-                            
-                        </div>
-                        <div className={s.service11}>
+                        
+                        <div className={s.service}>
+                            <div className={s.service11}></div>
                             <h3>Остеопатия</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
-                        <div className={s.service12}>
+                        
+                        <div className={s.service}>
+                            <div className={s.service12}></div>
                             <h3>Мануальная <br/>терапия</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
                         </div>
+                        
 
                 </div>
                 }

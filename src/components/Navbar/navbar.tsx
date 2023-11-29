@@ -64,14 +64,14 @@ const Navbar = () => {
     return(
         <div className={`${s.navbarWrapper} ${!showNavbar && s.navbarHide}`}>
             <div className={s.navbar}>
-                <Logo />
+                <Logo className={s.logo}/>
                 <div className={s.navbarLinks}>
-                    <a>О нас</a>
-                    <a>Услуги</a>
-                    <a>Программы</a>
-                    <a>Наши врачи</a>
-                    <a>Блог</a>
-                    <a>Контакты</a>
+                    <a href="#about">О нас</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#doctors">Наши врачи</a>
+                    <a href="#programs">Программы</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#contacts">Карта</a>
                 </div>
                 <div className={s.navButtons}>
                     <a>+7 (342) 258-12-85</a>

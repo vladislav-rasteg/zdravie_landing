@@ -3,6 +3,10 @@
     padding-top: 111px;
 }
 
+.mobileOnly{
+    display: none !important;
+}
+
 a{
     cursor: pointer;
 }
@@ -72,6 +76,8 @@ h2{
     display: flex;
     padding: 32px;
     background: #FFFFFF;
+    color: #202020;
+    text-decoration: none;
     border-radius: 52px;
     transition: 300ms;
 }
@@ -100,7 +106,7 @@ h2{
     flex-direction: column;
     align-items: center;
     gap: 36px;
-    margin-top: 120px;
+    padding-top: 120px;
 }
 
 .aboutText{
@@ -130,9 +136,8 @@ h2{
     display: flex;
     flex-direction: column;
     gap: 60px;
-    margin-top: 120px;
+    padding-top: 120px;
     align-items: center;
-    margin-bottom: 120px;
 }
 
 .servicesGrid{
@@ -157,7 +162,7 @@ h2{
 }
 
 .servicesGrid div:hover{
-    background-size: 110%;
+    background-size: 120%;
 }
 
 .servicesGrid div h3{
@@ -280,9 +285,10 @@ h2{
 }
 
 .ourDoctors{
+    padding-top: 120px;
     display: flex;
     gap: 8px;
-    height: 700px;
+    height: 820px;
 }
 
 .aboutDoctor{
@@ -469,6 +475,7 @@ h2{
     margin-top: 60px;
 }
 
+
 .programsBlock{
     display: flex;
     flex-direction: column;
@@ -612,11 +619,17 @@ h2{
 }
 
 .reviews{
-    margin-top: 60px;
+    padding-top: 120px;
     display: flex;
     gap: 8px;
     width: 100%;
-    height: 700px;
+    height: 820px;
+}
+
+.rightText{
+    width: 100%;
+    text-align: end;
+    font-size: 36px;
 }
 
 .reviews_left{
@@ -706,4 +719,138 @@ h2{
 .map{
     border-radius: 22px;
     border: 2px solid #ffffff;
+}
+
+@media (max-width: 767px){
+    .mobileOnly{
+        display: flex !important;
+    }
+    .desctopOnly{
+        display: none !important;
+    }
+
+    .pageWrapper{
+        width: 90%;
+    }
+
+    .columnFlex{
+        width: 100%;
+    }
+
+    .columnFlexMobile{
+        width: 82%;
+    }
+
+    .heroMainBlock{
+        height: auto;
+        gap: 12px;
+        padding: 22px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .heroMainBlock a{
+        font-size: 18px;
+    }
+
+    .secondHeroImage{
+        width: 100%;
+        height: auto;
+    }
+
+    .firstHeroImage{
+        width: 100%;
+        height: auto;
+    }
+
+    .thirdHeroImageWrapper{
+        width: 100%;
+    }
+
+    .thirdHeroImage{
+        width: 100%;
+        height: auto;
+    }
+
+    .heroRecordBlock{
+        height: auto;
+        flex-direction: column;
+        align-items: start;
+        gap: 12px;
+        padding: 22px;
+    }
+
+    .heroRecordBlock h2{
+        font-size: 24px;
+    }
+
+    .heroRecordBlock .whiteButton{
+        width: 100%;
+    }
+
+    .whiteButton{
+        padding: 22px 16px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutText{
+        font-size: 24px;
+    }
+
+    .aboutButton{
+        padding: 22px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .aboutBlock{
+        padding-top: 60px;
+
+    }
+
+    .servicesBlock{
+        padding-top: 60px;
+        gap: 22px;
+    }
+
+
+    .servicesGrid{
+        grid-template-columns: repeat(2, 50%);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .servicesGrid div{
+        padding: 12px;
+        width: 100%;
+    }
+    .servicesGrid div h3{
+        color: #202020;
+        font-size: 20px;
+    }
+    .servicesGrid div a{
+        padding: 16px 22px;
+        font-size: 14px;
+    }
+
+    .service2{
+        display: none;
+    }
+
+    .service5{
+        padding: 12px !important;
+    }
+
+    .service5 p{
+        font-size: 14px;
+    }
+
 }

@@ -11,6 +11,11 @@
     transition: 300ms;
 }
 
+.logo{
+    height: 50px;
+    width: auto;
+}
+
 .navbar{
     display: flex;
     width: 1280px;

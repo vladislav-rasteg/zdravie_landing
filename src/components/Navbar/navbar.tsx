@@ -2,7 +2,12 @@ import {useRef, useState, useEffect} from "react"
 import {ReactComponent as Logo} from '../../assets/logo.svg'
 import s from "./navbar.module.css"
 
-const Navbar = () => {
+interface NavbarProps{
+    showBurgerMenu: boolean;
+    setShowBurgerMenu: Function;
+}
+
+const Navbar = ({showBurgerMenu, setShowBurgerMenu}: NavbarProps) => {
 
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -77,6 +82,11 @@ const Navbar = () => {
                     <a>+7 (342) 258-12-85</a>
                     <a className={s.navbarButton}>Записаться на прием</a>
                 </div>
+                <button className={showBurgerMenu ? `${s.burger} ${s.expanded}` : s.burger} onClick={() => {setShowBurgerMenu(!showBurgerMenu)}}>
+                    <span className={s.bar_1}></span>
+                    <span className={s.bar_2}></span>
+                    <span className={s.bar_3}></span>
+                </button>
             </div>
         </div>
         

@@ -7,6 +7,26 @@
     display: none !important;
 }
 
+.burgerLinks{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.burgerLinks a{
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    transition: 300ms;
+    width: 100%;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
 a{
     cursor: pointer;
 }
@@ -356,6 +376,10 @@ h2{
     border-radius: 26px;
 }
 
+.aboutDoctorsSwithger{
+    display: none;
+}
+
 .switcherButton{
     width: 48px;
     height: 48px;
@@ -482,7 +506,7 @@ h2{
     justify-content: space-between;
     height: 100vh;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
     width: 100%;
     position: sticky;
     top: 0;
@@ -721,6 +745,11 @@ h2{
     border: 2px solid #ffffff;
 }
 
+.aboutProgram a:hover{
+    background: #202020;
+    color: #FFFFFF;
+}
+
 @media (max-width: 767px){
     .mobileOnly{
         display: flex !important;
@@ -831,10 +860,11 @@ h2{
     .servicesGrid div{
         padding: 0px;
         width: 100%;
+        border-radius: 16px 16px 0px 0px;
     }
     .servicesGrid div h3{
         color: #202020;
-        font-size: 20px;
+        font-size: 16px;
     }
     .servicesGrid div a{
         padding: 16px 22px;
@@ -849,8 +879,267 @@ h2{
         padding: 12px !important;
     }
 
+    .service7{
+        gap: 12px !important;
+    }
+
     .service5 p{
         font-size: 14px;
+    }
+
+    .service{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 16px !important;
+        height: 100%;
+    }
+
+    .service h3{
+        padding: 0px 0px 0px 16px !important;
+        font-size: 16px !important;
+        word-wrap: normal;
+    }
+
+    .buttonRow{
+        align-items: center !important;
+        padding: 0px 16px 16px 16px !important;
+    }
+
+    .buttonRow .button{
+        border: 1px solid #202020;
+        width: 100%;
+        padding: 12px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ourDoctors{
+        padding-top: 60px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .doctorImageWrapper{
+        width: 100%;
+        aspect-ratio: 1;
+        min-width: unset;
+    }
+
+    .doctorImage{
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .aboutDoctor{
+        padding: 22px;
+        height: auto;
+        justify-content: top;
+        gap: 22px;
+    }
+
+    .firstMessage{
+        font-size: 16px;
+        padding: 16px 22px;
+    }
+
+    .doctorMessage{
+        padding: 16px 22px;
+        max-width: 95%;
+    }
+
+    .doctorName{
+        font-size: 16px;
+    }
+
+    .doctorMessageText{
+        font-size: 16px;
+    }
+
+    .ourDoctorsText{
+        display: none;
+    }
+
+    .messages{
+        gap: 12px;
+    }
+    
+    .aboutDoctorsSwitcher{
+        display: flex;
+        gap: 8px;
+        padding: 8px 8px;
+        background: #FFFFFF;
+        border-radius: 12px;
+    }
+
+    .aboutDoctorsSwitcher .switcherButton{
+        width: 40px;
+        height: 40px;
+    }
+
+    .aboutDoctorHeading{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .programsBlock{
+        height: auto;
+        gap: 32px;
+    }
+
+    .programsSection{
+        height: auto;
+    }
+
+    .programsHeading{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .programsHeadingButtons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;    
+        gap: 8px
+    }
+
+    .programTypeActive{
+        opacity: 1;
+    }
+
+    .programTypeDisabled{
+        opacity: 0.6;
+    }
+
+    .programsContentImage{
+        display: none;
+    }
+    
+    .programsContentWrapper{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .programsList{
+        width: 100%;
+    }
+
+    .clickToSwitch{
+        flex-direction: row-reverse;
+    }
+
+    .clickToSwitch svg{
+        transform: rotate(90deg);
+    }
+
+    .aboutProgram{
+        border-radius: 22px;
+        padding: 22px;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .aboutProgram p{
+        font-size: 22px;
+        line-height: normal;
+    }
+
+    .aboutProgramButtons{
+        width: 100%;
+    }
+
+    .aboutProgram a{
+        width: 100% !important;
+        padding: 22px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .program{
+        border-radius: 22px;
+        padding: 22px 0px;
+    }
+    
+    .program2{
+        border-radius: 22px;
+        padding: 22px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .rightText{
+        font-size: 18px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .reviews{
+        padding-top: 60px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .reviews_left{
+        border-radius: 22px;
+        padding: 22px;
+        gap: 0px;
+        height: 450px;
+    }
+
+    .subblock{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .reviewButton{
+        width: 100%;
+        padding: 22px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .review{
+        flex-direction: column;
+        padding: 22px;
+        gap: 12px;
+        border-radius: 22px;
+        align-items: start;
+    }
+
+    .review img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .reviewTextName{
+        font-size: 16px;
+    }
+
+    .reviewTextText{
+        font-size: 16px;
+    }
+
+    .map{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .switcher{
+        right: 12px;
+        bottom: 12px;
     }
 
 }

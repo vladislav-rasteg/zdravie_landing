@@ -22,7 +22,14 @@ import review2 from "../../assets/review2.png";
 import review3 from "../../assets/review3.png";
 import review4 from "../../assets/review4.png";
 import Footer from "../../components/Footer/Footer"
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { BurgerMenu } from "../../components/BurgerMenu"
+
 const MainPage = () => {
+
+    const { height, width } = useWindowDimensions();
+
+    const [showBurgerMenu, setShowBurgerMenu] = useState(false)
 
     const [doctorIndex, setDoctorIndex] = useState(1)
 
@@ -90,10 +97,12 @@ const MainPage = () => {
     }
 
     useEffect(() => {
-        if(window.innerWidth < 700){
+        if(width && width < 700){
             setIsMobile(true)
+        } else {
+            setIsMobile(false)
         }
-    })
+    }, [width])
 
     const setSelectedProgramHandler = (index: number) => {
         setSelectedProgram(index)
@@ -101,7 +110,18 @@ const MainPage = () => {
 
     return(
         <div className={s.pageWrapper}>
-            <Navbar />
+            <Navbar showBurgerMenu={showBurgerMenu} setShowBurgerMenu={setShowBurgerMenu} />
+
+            <BurgerMenu setIsOpen={setShowBurgerMenu} isOpen={showBurgerMenu}> 
+                <div className={s.burgerLinks}>
+                    <a href="#about" onClick={() => setShowBurgerMenu(false)} >О нас</a>
+                    <a href="#services" onClick={() => setShowBurgerMenu(false)} >Услуги</a>
+                    <a href="#doctors" onClick={() => setShowBurgerMenu(false)} >Наши врачи</a>
+                    <a href="#programs" onClick={() => setShowBurgerMenu(false)} >Программы</a>
+                    <a href="#reviews" onClick={() => setShowBurgerMenu(false)} >Отзывы</a>
+                </div>
+            </BurgerMenu>
+
             <div className={`${s.rowFlex} ${s.desctopOnly}`}>
                 <div className={s.columnFlex}>
                     <div className={s.heroMainBlock}>
@@ -254,7 +274,7 @@ const MainPage = () => {
                         </div>
                         <div className={s.service}>
                             <div className={s.service6}></div>
-                            <h3>Прием педиатра</h3>
+                            <h3>Прием<br />педиатра</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
@@ -265,7 +285,7 @@ const MainPage = () => {
                         </div>
                         <div className={s.service}>
                             <div className={s.service8}></div>
-                            <h3>Биорезонансная <br/>терапия</h3>
+                            <h3>Биорезо&shy;нансная <br/>терапия</h3>
                             <div className={s.buttonRow}>
                                 <a className={s.button}>Подробнее</a>
                             </div>
@@ -300,7 +320,18 @@ const MainPage = () => {
                 </div>
             <div className={s.ourDoctors} id="doctors">
                 <div className={s.aboutDoctor}>
-                    <h1>Наши врачи</h1>
+                    <div className={s.aboutDoctorHeading}>
+                        <h1>Наши врачи</h1>
+                        <div className={s.aboutDoctorsSwitcher}>
+                            <div onClick={doctorBackward} className={s.switcherButton}>
+                                <ChevronLeftSmall />
+                            </div>
+                            <div onClick={doctorForward} className={s.switcherButton}>
+                            <ChevronRightSmall />
+                            </div>
+                        </div>
+                    </div>
+                        
                     <div className={s.messages}>
                         <div className={s.firstMessage}>
                             Кто в вашей команде?
@@ -344,8 +375,8 @@ const MainPage = () => {
                         </div>
                     </div>
                     <div className={s.ourDoctorsText}>
-                        <p>Все процедуры выполняются опытными<br />
-                        специалистами и применяются для<br />
+                    <p>Все процедуры выполняются опытными<br />
+                        пециалистами и применяются для<br />
                         устранения причины болезни и профилактики.</p>
                         <div onClick={doctorForward} className={s.nextButton}>
                             <ChevronRight  />
@@ -366,12 +397,25 @@ const MainPage = () => {
             </div>
             <div className={s.programsSection} ref={ref} id="programs">
                 <div className={s.programsBlock}>
-                    <div className={s.programsHeading}>
-                        <h1>Программы для </h1>
-                        <h1 className={programType === 1 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>детей</h1>
-                        <h1> / </h1>
-                        <h1 className={programType === 2 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>взрослых</h1>
-                    </div>
+                    {
+                        !isMobile ?
+                            <div className={s.programsHeading}>
+                                <h1>Программы для </h1>
+                                <h1 className={programType === 1 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>детей</h1>
+                                <h1> / </h1>
+                                <h1 className={programType === 2 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>взрослых</h1>
+                            </div>
+                        :
+                            <div className={s.programsHeading}>
+                                <h1> Программы для</h1>
+                                <div className={s.programsHeadingButtons}>
+                                    <h1 className={programType === 1 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>детей</h1>
+                                    <h1> / </h1>
+                                    <h1 className={programType === 2 ? s.programTypeActive : s.programTypeDisabled} onClick={switchProgramType}>взрослых</h1>
+                                </div>
+                            </div>
+
+                    }
                     <div className={s.programsContentWrapper}>
                         <img className={s.programsContentImage} src={programType === 1 ? programsContentChild : programsContentAdult} />
                         <div className={s.clickToSwitch}>
@@ -482,7 +526,11 @@ const MainPage = () => {
                 <p className={s.aboutText}>"Болезнь - это дарама в 2 актах, из которых первый разыгрывается в угрюмой тиши тканей, при погашенных огнях, без намека на болевые ощущения.<br />
                 Когда появляется боль или другие неприятные ощущения, это почти всегда второй акт..."
                 </p>
-                <p className={s.rightText}>Французский врач Рене Лариш</p>
+                {   !isMobile ?
+                    <p className={s.rightText}>Французский врач Рене Лариш</p>
+                    :
+                    <p className={s.rightText}>Французский врач<br />Рене Лариш</p>
+                }
                 <a className={s.aboutButton}>Записаться на консультацию</a>
             </div>
             <div className={s.reviews} id="reviews">

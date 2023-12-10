@@ -42,5 +42,18 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script type="text/javascript" src="https://w632142.yclients.com/widgetJS" charset="UTF-8"></script>
+    
+<!-- Присвоить класс ms_booking когда в url кнопки установлена ссылка на виджет которая начинается с “n” -->
+<script>
+setInterval(() => {
+if (document.querySelector(".ms_booking"))
+yWidget.setButtons();
+}, 100);	 
+</script>
+<script>
+document.querySelectorAll('[href^="https://n"]').forEach((item)  => {
+ item.classList.add('ms_booking');
+ }); 
+</script>
   </body>
 </html>

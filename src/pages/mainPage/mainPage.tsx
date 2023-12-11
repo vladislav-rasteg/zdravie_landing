@@ -158,7 +158,7 @@ const MainPage = () => {
                 </div>
                 <div className={s.heroRecordBlock}>
                     <h2>Записаться<br/>к специалисту</h2>
-                    <a href="#" className={s.whiteButton} data-url="https://w632142.yclients.com/">Онлайн запись</a>
+                    <a href="https://n632142.yclients.com/" className={s.whiteButton} data-url="https://n632142.yclients.com/">Онлайн запись</a>
                 </div>
             </div>
 

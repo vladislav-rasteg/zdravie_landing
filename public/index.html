@@ -43,17 +43,16 @@
     -->
     <script type="text/javascript" src="https://w632142.yclients.com/widgetJS" charset="UTF-8"></script>
     
-<!-- Присвоить класс ms_booking когда в url кнопки установлена ссылка на виджет которая начинается с “n” -->
-<script>
-setInterval(() => {
-if (document.querySelector(".ms_booking"))
-yWidget.setButtons();
-}, 100);	 
-</script>
-<script>
-document.querySelectorAll('[href^="https://n"]').forEach((item)  => {
- item.classList.add('ms_booking');
- }); 
+<!-- Присвоить класс ms_booking когда в url кнопки установлена ссылка на виджет которая начинается с “n” и создается iframe -->
+<script type="text/javascript">
+$(document).ready(function() {
+$('[href^="https://n"]').addClass('ms_booking');
+var scriptService = document.createElement('script');
+scriptService .src = "https://w632142.yclients.com/widgetJS";
+scriptService .type = "text/javascript";
+scriptService .charset = "UTF-8";
+document.documentElement.appendChild(scriptService );
+});
 </script>
   </body>
 </html>

@@ -45,13 +45,12 @@
     
 <!-- Присвоить класс ms_booking когда в url кнопки установлена ссылка на виджет которая начинается с “n” и создается iframe -->
 <script type="text/javascript">
-$(document).ready(function() {
-$('[href^="https://n"]').addClass('ms_booking');
-var scriptService = document.createElement('script');
-scriptService .src = "https://w632142.yclients.com/widgetJS";
-scriptService .type = "text/javascript";
-scriptService .charset = "UTF-8";
-document.documentElement.appendChild(scriptService );
+document.addEventListener("DOMContentLoaded", function() { 
+  var scriptService = document.createElement('script');
+  scriptService .src = "https://w632142.yclients.com/widgetJS";
+  scriptService .type = "text/javascript";
+  scriptService .charset = "UTF-8";
+  document.documentElement.appendChild(scriptService );
 });
 </script>
   </body>

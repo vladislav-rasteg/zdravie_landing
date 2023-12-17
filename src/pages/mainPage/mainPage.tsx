@@ -134,7 +134,7 @@ const MainPage = () => {
                     </div>
                     <div className={s.heroRecordBlock}>
                         <h2>Записаться<br/>к специалисту</h2>
-                        <a href="#" className={s.whiteButton} data-url="https://w632142.yclients.com/">Онлайн запись</a>
+                        <a href="#" className={`${s.whiteButton} ms_booking`} data-url="https://n632142.yclients.com/">Онлайн запись</a>
                     </div>
                 </div>
                 <div>
@@ -158,7 +158,7 @@ const MainPage = () => {
                 </div>
                 <div className={s.heroRecordBlock}>
                     <h2>Записаться<br/>к специалисту</h2>
-                    <a href="https://n632142.yclients.com/" className={s.whiteButton} data-url="https://n632142.yclients.com/">Онлайн запись</a>
+                    <a href="https://n632142.yclients.com/" className={`${s.whiteButton} ms_booking`} data-url="https://n632142.yclients.com/">Онлайн запись</a>
                 </div>
             </div>
 
@@ -167,7 +167,7 @@ const MainPage = () => {
                                             <br/>и массаже. Наши врачи применяют целостный подход
                                             <br/>к лечению, устраняя  не только симптомы,
                                             <br/>но и основные причины болезни</p>
-                <a className={s.aboutButton}>Записаться на прием</a>
+                <a href="#" className={`${s.aboutButton} ms_booking`} data-url="https://n632142.yclients.com/">Записаться на прием</a>
             </div>
 
             <div className={s.servicesBlock} id="services">

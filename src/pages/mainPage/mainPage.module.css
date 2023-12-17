@@ -145,6 +145,8 @@ h2{
     border: 1px solid #202020;
     border-radius: 52px;
     transition: 300ms;
+    text-decoration: none;
+    color: #202020;
 }
 
 .aboutButton:hover{

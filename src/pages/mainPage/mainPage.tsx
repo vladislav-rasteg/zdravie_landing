@@ -24,6 +24,7 @@ import review4 from "../../assets/review4.png";
 import Footer from "../../components/Footer/Footer"
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { BurgerMenu } from "../../components/BurgerMenu"
+import Reveal from "../../components/Reveal/Reveal"
 
 const MainPage = () => {
 
@@ -163,159 +164,165 @@ const MainPage = () => {
             </div>
 
             <div className={s.aboutBlock} id="about">
-                <p className={s.aboutText}>Мы специализируемся на превентивной медицине
-                                            <br/>и массаже. Наши врачи применяют целостный подход
-                                            <br/>к лечению, устраняя  не только симптомы,
-                                            <br/>но и основные причины болезни</p>
+                <Reveal>
+                    <p className={s.aboutText}>Мы специализируемся на превентивной медицине
+                                                <br/>и массаже. Наши врачи применяют целостный подход
+                                                <br/>к лечению, устраняя  не только симптомы,
+                                                <br/>но и основные причины болезни</p>
+                </Reveal>                            
                 <a href="#" className={`${s.aboutButton} ms_booking`} data-url="https://n632142.yclients.com/">Записаться на прием</a>
             </div>
 
             <div className={s.servicesBlock} id="services">
+                <Reveal>
                 <h1>Наши услуги</h1>
+                </Reveal>
                 { !isMobile ? 
-                    <div className={s.servicesGrid}>
-                        <div className={s.service1}>
-                            <h3>Массаж детский</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service2}>
-                            
-                        </div>
-                        <div className={s.service3}>
-                            <h3>Массаж женский</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service4}>
-                            <h3>Массаж мужской</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service5}>
-                            <p>Более 25 лет мы разрабатываем
-                            <br/>и применяем программы с самыми
-                            эффективными методами
-                            поддержания и восстановления
-                            здоровья для детей и взрослых</p>
-                        </div>
-                        <div className={s.service6}>
-                            <h3>Прием педиатра</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service7}>
-                            <h3>Наши курсы</h3>
-                            <a className={s.button}>Смотреть</a>
-                        </div>
-                        <div className={s.service8}>
-                            <h3>Биорезонансная <br/>терапия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service9}>
-                            <h3>Кабинет здорового<br/>питания для детей<br/>и взрослых</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service10}>
-                            
-                        </div>
-                        <div className={s.service11}>
-                            <h3>Остеопатия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-                        <div className={s.service12}>
-                            <h3>Мануальная <br/>терапия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
-                            </div>
-                        </div>
-
-                    </div>
-                :
-                    <div className={s.servicesGrid}>
-                        <div className={s.service}>
+                    <Reveal>
+                        <div className={s.servicesGrid}>
                             <div className={s.service1}>
+                                <h3>Массаж детский</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                            <h3>Массаж детский</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service2}>
+                                
                             </div>
-                        </div>
-                        <div className={s.service}>
-                            <div className={s.service3}></div>
-                            <h3>Массаж женский</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service3}>
+                                <h3>Массаж женский</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                        </div>
-                        <div className={s.service}>
-                            <div className={s.service4}></div>
-                            <h3>Массаж мужской</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service4}>
+                                <h3>Массаж мужской</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                        </div>
-                        <div className={s.service5}>
-                            <p>Более 25 лет мы разрабатываем
-                            <br/>и применяем программы с самыми
-                            эффективными методами
-                            поддержания и восстановления
-                            здоровья для детей и взрослых</p>
-                        </div>
-                        <div className={s.service}>
-                            <div className={s.service6}></div>
-                            <h3>Прием<br />педиатра</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service5}>
+                                <p>Более 25 лет мы разрабатываем
+                                <br/>и применяем программы с самыми
+                                эффективными методами
+                                поддержания и восстановления
+                                здоровья для детей и взрослых</p>
                             </div>
-                        </div>
-                        <div className={s.service7}>
-                            <h3>Наши курсы</h3>
-                            <a className={s.button}>Смотреть</a>
-                        </div>
-                        <div className={s.service}>
-                            <div className={s.service8}></div>
-                            <h3>Биорезо&shy;нансная <br/>терапия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service6}>
+                                <h3>Прием педиатра</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                        </div>
-                        <div className={s.service}>
-                            <div className={s.service9}></div>
-                            <h3>Кабинет здорового<br/>питания для детей<br/>и взрослых</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service7}>
+                                <h3>Наши курсы</h3>
+                                <a className={s.button}>Смотреть</a>
                             </div>
-                        </div>
-                        
-                        <div className={s.service}>
-                            <div className={s.service11}></div>
-                            <h3>Остеопатия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service8}>
+                                <h3>Биорезонансная <br/>терапия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div className={s.service}>
-                            <div className={s.service12}></div>
-                            <h3>Мануальная <br/>терапия</h3>
-                            <div className={s.buttonRow}>
-                                <a className={s.button}>Подробнее</a>
+                            <div className={s.service9}>
+                                <h3>Кабинет здорового<br/>питания для детей<br/>и взрослых</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
                             </div>
-                        </div>
-                        
+                            <div className={s.service10}>
+                                
+                            </div>
+                            <div className={s.service11}>
+                                <h3>Остеопатия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service12}>
+                                <h3>Мануальная <br/>терапия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
 
-                </div>
+                        </div>
+                    </Reveal>
+                :
+                    <Reveal>
+                        <div className={s.servicesGrid}>
+                            <div className={s.service}>
+                                <div className={s.service1}>
+                                </div>
+                                <h3>Массаж детский</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service}>
+                                <div className={s.service3}></div>
+                                <h3>Массаж женский</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service}>
+                                <div className={s.service4}></div>
+                                <h3>Массаж мужской</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service5}>
+                                <p>Более 25 лет мы разрабатываем
+                                <br/>и применяем программы с самыми
+                                эффективными методами
+                                поддержания и восстановления
+                                здоровья для детей и взрослых</p>
+                            </div>
+                            <div className={s.service}>
+                                <div className={s.service6}></div>
+                                <h3>Прием<br />педиатра</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service7}>
+                                <h3>Наши курсы</h3>
+                                <a className={s.button}>Смотреть</a>
+                            </div>
+                            <div className={s.service}>
+                                <div className={s.service8}></div>
+                                <h3>Биорезо&shy;нансная <br/>терапия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            <div className={s.service}>
+                                <div className={s.service9}></div>
+                                <h3>Кабинет здорового<br/>питания для детей<br/>и взрослых</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            
+                            <div className={s.service}>
+                                <div className={s.service11}></div>
+                                <h3>Остеопатия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                            
+                            <div className={s.service}>
+                                <div className={s.service12}></div>
+                                <h3>Мануальная <br/>терапия</h3>
+                                <div className={s.buttonRow}>
+                                    <a className={s.button}>Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </Reveal>
                 }
                 </div>
             <div className={s.ourDoctors} id="doctors">
@@ -327,7 +334,7 @@ const MainPage = () => {
                                 <ChevronLeftSmall />
                             </div>
                             <div onClick={doctorForward} className={s.switcherButton}>
-                            <ChevronRightSmall />
+                                <ChevronRightSmall />
                             </div>
                         </div>
                     </div>

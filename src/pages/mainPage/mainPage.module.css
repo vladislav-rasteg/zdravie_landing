@@ -3,6 +3,10 @@
     padding-top: 111px;
 }
 
+.aboutDoctorsSwitcher{
+    display: none;
+}
+
 .mobileOnly{
     display: none !important;
 }
